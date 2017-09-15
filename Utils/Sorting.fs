@@ -1,5 +1,5 @@
 ﻿// Learn more about F# at http://fsharp.org
-module Sorting
+module Utils.Sorting
 
 let rec quicksort list =
     match list with

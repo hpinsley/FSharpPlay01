@@ -2,7 +2,7 @@
 module Main
 
 open System
-open Sorting
+open Utils.Sorting
 
 [<EntryPoint>]
 let main argv =
