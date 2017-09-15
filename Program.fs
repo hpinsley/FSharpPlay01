@@ -17,7 +17,7 @@ let playWithWeb () =
         html // return all the html
 
     let google = fetchUrl myCallback "http://google.com"
-    printfn "%A" google
+    // printfn "%A" google
 
     // build a function with the callback "baked in"
     let fetchUrl2 = fetchUrl myCallback
