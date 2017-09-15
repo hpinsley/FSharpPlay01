@@ -19,10 +19,22 @@ let playWithWeb () =
     let google = fetchUrl myCallback "http://google.com"
     printfn "%A" google
 
+    // build a function with the callback "baked in"
+    let fetchUrl2 = fetchUrl myCallback
+    // test with a list of sites
+    let sites = ["http://www.bing.com";
+                 "http://www.google.com";
+                 "http://www.yahoo.com"]
+    // process each site in the list
+    let contentLength =
+        sites
+        |> List.map (fetchUrl2 >> String.length)
+    printfn "%A" contentLength
+
 [<EntryPoint>]
 let main argv =
     printfn "Hello World from F#!"
     playWithSorting()
-    // playWithWeb()
+    playWithWeb()
 
     0 // return an integer exit code
